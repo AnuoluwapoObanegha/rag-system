@@ -33,17 +33,14 @@ pip install langchain langchain_community langchain_chroma langchain_text_splitt
 
 Loading Documents
 The system reads all .txt files from a folder called docs.
-
-If files have wrong encoding, they may not load properly.
+-If files have wrong encoding, they may not load properly.
 
 Splitting Documents
 Documents are split into chunks because LLMs can’t handle huge text at once.
-
 Chunking makes it easier to find similarities between text and questions.
 
 Embedding the Chunks
 Each chunk is converted into a vector using FastEmbed.
-
 Vectors represent the text in a way the computer can search quickly.
 
 Storing in ChromaDB
@@ -58,7 +55,6 @@ Generating Answers
 The relevant chunks are sent to DeepSeek (OpenRouter) to generate a natural, human-like answer.
 
 🔹 How to Run
-
 Place all your .txt documents in a folder called docs.
 
 Run the ingestion pipeline to load, chunk, and embed documents:
@@ -68,12 +64,10 @@ Run the retrieval pipeline to ask questions:
 python retrieval_pipeline.py
 
 Enter a question like:
-
 How much did Microsoft pay to acquire GitHub?
 The system will retrieve relevant chunks and generate an answer.
 
 🔹 To Note
-
 Always use the same embedding model for indexing and retrieval.
 
 Chunk size matters: too big → slow retrieval, too small → too many chunks.
